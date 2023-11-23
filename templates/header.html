@@ -1,7 +1,7 @@
 <div class="container">
     <div class="top-bar">
         <!--More-->
-        <button class="top-bar__more">
+        <button class="top-bar__more d-none d-lg-block js-toggle" toggle-target="#navbar">
             <img src="./assets/icons/more.svg" alt="" class="icon top-bar__more-icon" />
         </button>
         <!--Logo-->
@@ -10,7 +10,18 @@
             <h1 class="logo__title">grocerymart</h1>
         </a>
         <!--Navbar-->
-        <nav class="navbar">
+        <nav id="navbar" class="navbar show">
+            <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                <img class="icon" src="./assets/icons/arrow-left.svg" alt="" />
+            </button>
+            <a href="#!" class="nav-btn d-none d-md-flex">
+                <img class="icon" src="./assets/icons/buy.svg" alt="" class="nav-btn__icon" />
+                <span class="nav-btn__title">Card</span> <span class="nav-btn__qnt">3</span></a
+            >
+            <a href="#!" class="nav-btn d-none d-md-flex">
+                <img class="icon" src="./assets/icons/heart.svg" alt="" class="nav-btn__icon" />
+                <span class="nav-btn__title">Favorite</span> <span class="nav-btn__qnt">3</span></a
+            >
             <ul class="navbar__list js-dropdown-list">
                 <li class="navbar__item">
                     <a href="#!" class="navbar__link"
@@ -22,7 +33,7 @@
                                 <div class="top-menu__main">
                                     <!--Menu column-->
                                     <div class="menu-column">
-                                        <div class="menu-column__icon">
+                                        <div class="menu-column__icon d-lg-none">
                                             <img
                                                 src="./assets/images/category/cate-1.1.svg"
                                                 alt=""
@@ -35,7 +46,7 @@
                                             />
                                         </div>
                                         <div class="menu-column__content">
-                                            <h2 class="menu-column__heading">All Departments</h2>
+                                            <h2 class="menu-column__heading d-lg-none">All Departments</h2>
                                             <ul class="menu-column__list js-menu-list">
                                                 <!--Savings & Featured Shops-->
                                                 <li class="menu-column__item">
@@ -4640,8 +4651,7 @@
                                                 </a>
                                                 <ul class="menu-column__list">
                                                     <li class="menu-column__item">
-                                                        <a href="#!" class="menu-column__link">Shop All
-                                                        </a>
+                                                        <a href="#!" class="menu-column__link">Shop All </a>
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Men's Grooming</a>
@@ -4651,17 +4661,23 @@
                                                     </li>
                                                     <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Beauty Tech & Tools</a>
-                                                    </li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Makeup</a>
-                                                    </li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Fragrance</a>
-                                                    </li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Nail Care</a>
-                                                    </li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Hair Care</a>
-                                                    </li></li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Hair Color</a>
-                                                    </li></li> <li class="menu-column__item">
+                                                    </li>
+                                                    <li class="menu-column__item">
                                                         <a href="#!" class="menu-column__link">Skincare</a>
                                                     </li>
                                                 </ul>
@@ -4675,14 +4691,15 @@
                 </li>
             </ul>
         </nav>
+        <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
         <!--Actions-->
         <div class="top-act">
-            <div class="top-act__group top-act__group--single">
+            <div class="top-act__group d-md-none top-act__group--single">
                 <button class="top-act__btn">
                     <img src="./assets/icons/search.svg" alt="" class="icon top-act__icon" />
                 </button>
             </div>
-            <div class="top-act__group">
+            <div class="top-act__group d-md-none">
                 <button class="top-act__btn">
                     <img src="./assets/icons/heart.svg" alt="" class="icon top-act__icon" />
                     <span class="top-act__title">03</span>
