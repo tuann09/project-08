@@ -64,7 +64,7 @@ $gutters: (
 }
 
 @mixin make-media-query($dimension) {
-    @media (max-width: $dimension - 0.02) {
+    @media (max-width: ( $dimension - 0.02)) {
         @content;
     }
 }
