@@ -1,0 +1,79 @@
+@use "../abstracts"; //Filter button
+.filter-btn {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    gap: 14px;
+    padding: 0 14px;
+    color: var(--filter-btn-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 142.857%;
+    border-radius: 6px;
+    background: var(--filter-btn-bg);
+}
+//Like button
+.like-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 20px 60px var(--like-btn-shadow);
+    &:not(&--liked) .like-btn__icon--liked {
+        display: none;
+    }
+    &--liked .like-btn__icon {
+        display: none;
+    }
+    &__icon--liked {
+        margin-top: 6px;
+    }
+}
+//Buttons
+.btn {
+    height: 46px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    background: #f8f8fb;
+    + .btn {
+        margin-left: 20px;
+    }
+    &--text {
+        color: #9e9da8;
+        background: transparent;
+        font-weight: 400;
+    }
+    &--primary {
+        color: #1a162e;
+        background: #ffb700;
+    }
+    &--outline {
+        background: #fff;
+        border: 1px solid #d2d1d6;
+    }
+    &--rounded {
+        border-radius: 99px;
+    }
+    &:hover {
+        opacity: 0.9;
+    }
+    &__cancel,
+    &__submit {
+        height: 38px;
+        padding: 0 10px;
+        @include abstracts.screen(sm) {
+            flex: 1;
+            height: 42px;
+        }
+    }
+    &__cancel {
+        font-size: 1.5rem;
+    }
+    &__submit {
+        font-size: 1.4rem;
+    }
+}
