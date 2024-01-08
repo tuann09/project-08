@@ -4,6 +4,7 @@ html {
     --icon-color: brightness(0) saturate(100%) invert(9%) sepia(9%) saturate(3544%) hue-rotate(210deg) brightness(93%)
         contrast(97%);
     --header-bg-color: #eee;
+    --footer-bg-color: var(--header-bg-color);
     --body-bg: #f6f6f6;
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
