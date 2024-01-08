@@ -1544,6 +1544,7 @@ button {
 .footer {
   margin-top: 60px;
   padding: 50px 0;
+  font-size: 1.4rem;
   background: var(--footer-bg-color);
 }
 .footer__row {
@@ -1568,7 +1569,6 @@ button {
 }
 .footer__desc {
   margin-top: 30px;
-  font-size: 1.5rem;
   line-height: 1.4;
 }
 @media (max-width: 991.98px) {
@@ -1578,19 +1578,16 @@ button {
 }
 .footer__help-text {
   margin-top: 40px;
-  font-size: 1.5rem;
 }
 .footer__list {
   margin-top: 30px;
 }
 .footer__link, .footer__text {
-  font-size: 1.5rem;
   padding: 8px 0;
   line-height: 1.5;
 }
 .footer__link {
   display: inline-block;
-  font-size: 1.5rem;
   transition: 0.2s;
 }
 .footer__link:hover {
@@ -1658,9 +1655,6 @@ button {
     flex-direction: column-reverse;
     gap: 50px;
   }
-}
-.footer__copyright {
-  font-size: 1.4rem;
 }
 .footer__socials {
   display: flex;
