@@ -174,7 +174,7 @@ button {
   outline: none;
   background: transparent;
   padding: 0;
-  cursor: p;
+  cursor: pointer;
 }
 
 .icon {
@@ -1309,6 +1309,23 @@ button {
     display: none !important;
   }
 }
+@keyframes shake {
+  0% {
+    translate: 0;
+  }
+  25% {
+    translate: 4px;
+  }
+  50% {
+    translate: -4px;
+  }
+  75% {
+    translate: 4px;
+  }
+  100% {
+    translate: 0;
+  }
+}
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
   display: flex;
   align-items: center;
@@ -1478,6 +1495,11 @@ button {
   .top-act {
     margin-left: 0;
   }
+  .top-act__sign-up {
+    height: 40px !important;
+    padding: 0 8px !important;
+    font-size: 1.4rem !important;
+  }
 }
 .top-act__group {
   min-width: 50px;
@@ -1637,6 +1659,7 @@ button {
 @media (max-width: 767.98px) {
   .footer__input {
     width: 50%;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 575.98px) {
@@ -1672,6 +1695,12 @@ button {
   transition: translate, filter;
   transition-duration: 0.3s;
 }
+@media (max-width: 575.98px) {
+  .footer__social-link {
+    width: 40px;
+    height: 40px;
+  }
+}
 .footer__social-link--facebook {
   background: #4863a9;
 }
@@ -1694,6 +1723,11 @@ button {
 .footer__social-icon {
   width: 16px;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%) hue-rotate(337deg) brightness(108%) contrast(104%);
+}
+@media (max-width: 575.98px) {
+  .footer__social-icon {
+    width: 17px;
+  }
 }
 
 .logo {
@@ -2092,6 +2126,10 @@ button {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   height: 46px;
   padding: 0 20px;
   border-radius: 6px;
@@ -2099,7 +2137,7 @@ button {
   font-weight: 500;
   background: #f8f8fb;
 }
-.btn + .btn {
+.btn + .btn:not(.btn--no-margin) {
   margin-left: 20px;
 }
 .btn--text {
@@ -2319,7 +2357,7 @@ button {
 }
 @media (max-width: 575.98px) {
   .filter__form-input {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 }
 .filter__form-input-icon {
@@ -2424,6 +2462,106 @@ button {
   }
 }
 
+.form:has(:invalid) .form__submit-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.form__group {
+  margin-top: 30px;
+}
+.form__group--inline {
+  display: flex;
+  align-items: center;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__text-input {
+  border-color: #ed4337;
+  background: rgba(237, 67, 55, 0.1);
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__error,
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon-error {
+  display: block;
+}
+.form__group:has(:invalid):has(.form__input:not(:placeholder-shown)) .form__input-icon {
+  display: none;
+}
+.form__text-input {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-radius: 10px;
+  border: 1.5px solid #d2d1d6;
+  padding: 0 12px;
+}
+.form__text-input:focus-within {
+  border-color: rgb(63, 141, 230);
+}
+.form__input {
+  flex: 1;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.form__input-icon {
+  margin-left: 12px;
+}
+.form__input::placeholder {
+  color: #d2d1d6;
+}
+.form__error {
+  display: none;
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #ed4337;
+  margin-left: 12px;
+}
+.form__input-icon-error {
+  display: none;
+  margin-left: 12px;
+  animation: shake 0.5s;
+}
+.form__pull-right {
+  margin-left: auto;
+}
+.form__checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.form__checkbox-label {
+  margin-left: 29px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+  color: #9e9da8;
+}
+.form__checkbox::before, .form__checkbox::after {
+  position: absolute;
+  content: "";
+}
+.form__checkbox::before {
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  border: 1.5px solid #9e9da8;
+}
+.form__checkbox:has(:checked)::before {
+  border-color: #ffb700;
+  background: #ffb700;
+}
+.form__checkbox:has(:checked)::after {
+  width: 15px;
+  height: 7px;
+  border: 3px solid;
+  border-color: transparent transparent #fff #fff;
+  rotate: -45deg;
+  left: 2px;
+  top: 5px;
+}
+
 html.dark {
   --text-color: #ffffff;
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%) hue-rotate(337deg)
@@ -2490,6 +2628,7 @@ html {
   --filter-form-shadow: rgba(200, 200, 200, 0.4);
   --filter-form-tag-bg: #f8f8fb;
   --filter-form-footer-bg: var(--filter-form-bg);
+  --auth-content-bg: #fff;
 }
 @media (max-width: 991.98px) {
   html {
@@ -2534,6 +2673,112 @@ html {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.auth {
+  display: flex;
+  min-height: 100vh;
+}
+.auth__intro, .auth__content {
+  flex: 1;
+  padding: 0 30px;
+}
+.auth__intro {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.auth__intro-logo, .auth__intro-next {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
+.auth__intro-logo {
+  top: 80px;
+}
+@media (max-width: 767.98px) {
+  .auth__intro-logo {
+    margin-left: 0;
+  }
+}
+.auth__intro-next {
+  bottom: 50px;
+}
+.auth__intro-img {
+  width: 100%;
+}
+.auth__intro-text {
+  font-size: 1.8rem;
+  max-width: 412px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.auth__content {
+  background: var(--auth-content-bg);
+}
+@media (max-width: 767.98px) {
+  .auth__content {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow-y: auto;
+    transition: translate 0.3s;
+  }
+  .auth__content.hide {
+    translate: 100%;
+  }
+}
+.auth__content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  width: min(460px, 100%);
+  margin: 0 auto;
+}
+.auth__heading {
+  margin-top: 50px;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__desc {
+  text-align: center;
+  color: #9e9da8;
+  margin-top: 10px;
+  padding: 0 30px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__form {
+  width: 100%;
+  margin-top: 30px;
+}
+.auth__link {
+  color: #0071dc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.auth__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+}
+.auth__btn {
+  width: 100%;
+}
+.auth__text {
+  color: #9e9da8;
+  margin-top: 108px;
+  font-size: 1.8rem;
+  line-height: 144.444%;
 }
 
 /*# sourceMappingURL=main.css.map */

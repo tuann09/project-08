@@ -33,6 +33,10 @@
 }
 //Buttons
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
@@ -40,7 +44,9 @@
     font-weight: 500;
     background: #f8f8fb;
     + .btn {
-        margin-left: 20px;
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
     }
     &--text {
         color: #9e9da8;
