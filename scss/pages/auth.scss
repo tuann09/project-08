@@ -2,6 +2,9 @@
 .auth {
     display: flex;
     min-height: 100vh;
+    @supports (-webkit-touch-callout: none) {
+        min-height: -webkit-fill-available;
+    }
     &__intro,
     &__content {
         flex: 1;
@@ -14,6 +17,7 @@
         align-items: center;
         flex-direction: column;
         gap: 50px;
+        background: var(--auth-intro-bg);
         &-logo,
         &-next {
             position: absolute;
@@ -31,7 +35,7 @@
             bottom: 50px;
         }
         &-img {
-            width: 100%;
+            width: min(424px, 100%);
         }
         &-text {
             font-size: 1.8rem;
@@ -39,7 +43,14 @@
             text-align: center;
             font-weight: 500;
             line-height: 144.444%;
+            color: var(--auth-intro-text-color);
+            @include abstracts.screen(md) {
+                font-size: 1.5rem;
+            }
         }
+    }
+    &__message {
+        margin-top: 30px;
     }
     &__content {
         background: var(--auth-content-bg);
@@ -60,6 +71,9 @@
             padding: 50px 0;
             width: min(460px, 100%);
             margin: 0 auto;
+            @include abstracts.screen(md) {
+                padding: 30px 0;
+            }
         }
     }
     &__heading {
@@ -67,31 +81,52 @@
         font-size: 3rem;
         font-weight: 500;
         line-height: 146.667%;
+        color: var(--auth-heading-color);
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            font-size: 2.2rem;
+        }
     }
     &__desc {
         text-align: center;
         color: #9e9da8;
         margin-top: 10px;
-        padding: 0 30px;
+        padding: 0 20px;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
     &__form {
         width: 100%;
         margin-top: 30px;
+        &-forgot {
+            margin-top: 10px;
+        }
+        @include abstracts.screen(md) {
+            margin-top: 0;
+        }
     }
     &__link {
         color: #0071dc;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
     &__btn-group {
         display: flex;
         flex-direction: column;
         gap: 30px;
         margin-top: 50px;
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            gap: 20px;
+        }
     }
     &__btn {
         width: 100%;
@@ -101,5 +136,12 @@
         margin-top: 108px;
         font-size: 1.8rem;
         line-height: 144.444%;
+        @include abstracts.screen(md) {
+            margin-top: 40px;
+            font-size: 1.6rem;
+        }
+        &-link {
+            font-size: inherit;
+        }
     }
 }

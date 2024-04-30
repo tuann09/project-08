@@ -2,6 +2,11 @@
   display: flex;
   min-height: 100vh;
 }
+@supports (-webkit-touch-callout: none) {
+  .auth {
+    min-height: -webkit-fill-available;
+  }
+}
 .auth__intro, .auth__content {
   flex: 1;
   padding: 0 30px;
@@ -13,6 +18,7 @@
   align-items: center;
   flex-direction: column;
   gap: 50px;
+  background: var(--auth-intro-bg);
 }
 .auth__intro-logo, .auth__intro-next {
   position: absolute;
@@ -31,7 +37,7 @@
   bottom: 50px;
 }
 .auth__intro-img {
-  width: 100%;
+  width: min(424px, 100%);
 }
 .auth__intro-text {
   font-size: 1.8rem;
@@ -39,6 +45,15 @@
   text-align: center;
   font-weight: 500;
   line-height: 144.444%;
+  color: var(--auth-intro-text-color);
+}
+@media (max-width: 767.98px) {
+  .auth__intro-text {
+    font-size: 1.5rem;
+  }
+}
+.auth__message {
+  margin-top: 30px;
 }
 .auth__content {
   background: var(--auth-content-bg);
@@ -63,24 +78,49 @@
   width: min(460px, 100%);
   margin: 0 auto;
 }
+@media (max-width: 767.98px) {
+  .auth__content-inner {
+    padding: 30px 0;
+  }
+}
 .auth__heading {
   margin-top: 50px;
   font-size: 3rem;
   font-weight: 500;
   line-height: 146.667%;
+  color: var(--auth-heading-color);
+}
+@media (max-width: 767.98px) {
+  .auth__heading {
+    margin-top: 40px;
+    font-size: 2.2rem;
+  }
 }
 .auth__desc {
   text-align: center;
   color: #9e9da8;
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 20px;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
 }
+@media (max-width: 767.98px) {
+  .auth__desc {
+    font-size: 1.4rem;
+  }
+}
 .auth__form {
   width: 100%;
   margin-top: 30px;
+}
+.auth__form-forgot {
+  margin-top: 10px;
+}
+@media (max-width: 767.98px) {
+  .auth__form {
+    margin-top: 0;
+  }
 }
 .auth__link {
   color: #0071dc;
@@ -88,11 +128,22 @@
   font-weight: 500;
   line-height: 146.667%;
 }
+@media (max-width: 767.98px) {
+  .auth__link {
+    font-size: 1.4rem;
+  }
+}
 .auth__btn-group {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin-top: 50px;
+}
+@media (max-width: 767.98px) {
+  .auth__btn-group {
+    margin-top: 40px;
+    gap: 20px;
+  }
 }
 .auth__btn {
   width: 100%;
@@ -102,6 +153,15 @@
   margin-top: 108px;
   font-size: 1.8rem;
   line-height: 144.444%;
+}
+@media (max-width: 767.98px) {
+  .auth__text {
+    margin-top: 40px;
+    font-size: 1.6rem;
+  }
+}
+.auth__text-link {
+  font-size: inherit;
 }
 
 /*# sourceMappingURL=auth.css.map */

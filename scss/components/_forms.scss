@@ -1,3 +1,4 @@
+@use "../abstracts";
 $error-color: #ed4337;
 .form {
     &:has(:invalid) &__submit-btn {
@@ -6,6 +7,9 @@ $error-color: #ed4337;
     }
     &__group {
         margin-top: 30px;
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
         &--inline {
             display: flex;
             align-items: center;
@@ -34,6 +38,9 @@ $error-color: #ed4337;
         &:focus-within {
             border-color: rgb(63, 141, 230);
         }
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
     }
     &__input {
         flex: 1;
@@ -45,7 +52,10 @@ $error-color: #ed4337;
             margin-left: 12px;
         }
         &::placeholder {
-            color: #d2d1d6;
+            color: var(--form-placeholder-color);
+        }
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
         }
     }
     &__error {
@@ -77,6 +87,9 @@ $error-color: #ed4337;
             font-weight: 500;
             line-height: 146.667%;
             color: #9e9da8;
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+            }
         }
         &::before,
         &::after {
@@ -103,6 +116,68 @@ $error-color: #ed4337;
             rotate: -45deg;
             left: 2px;
             top: 5px;
+        }
+    }
+    &__label {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+        &--small {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 142.857%;
+        }
+    }
+    &__select-wrap {
+        border-radius: 6px;
+        border: 1px solid #d2d1d6;
+        height: 45px;
+        display: flex;
+
+        align-items: center;
+    }
+    &__select {
+        padding: 0 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: var(--width, 108px);
+        height: calc(100% - 10px);
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+        &:hover {
+            cursor: pointer;
+        }
+        @include abstracts.screen(xl) {
+            flex: 1;
+        }
+    }
+    &__select + &__select {
+        border-left: 1px solid #d2d1d6;
+    }
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+        @include abstracts.screen(sm) {
+            gap: 10px;
+        }
+    }
+    &__tag {
+        border-radius: 6px;
+        color: #9e9da8;
+        background: var(--form-tag-bg);
+        font-size: 1.4rem;
+        padding: 6px 12px;
+        font-weight: 500;
+        line-height: 142.857%;
+        transition: color 0.23s;
+        &:hover {
+            cursor: pointer;
+            color: var(--text-color);
         }
     }
 }

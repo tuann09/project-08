@@ -23,6 +23,7 @@ a,
 img,
 button,
 input,
+label,
 textarea,
 select {
     padding: 0;
@@ -50,4 +51,12 @@ button {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+}
+i,
+em {
+    font-style: italic;
+}
+b,
+strong {
+    font-weight: 600;
 }
