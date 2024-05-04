@@ -68,7 +68,7 @@
     hr {
         border: none;
         height: 1px;
-        background: #ebebeb;
+        background: var(--text-content-hr-bg);
         margin: 40px 0;
     }
 }

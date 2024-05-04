@@ -13,6 +13,10 @@ html.dark {
     @include abstracts.screen(lg) {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
     }
+    //Header
+    --header-act-dropdown-bg: #2f3441;
+    --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
+    --header-act-dropdown-border-color: #171c28;
     //Dropdown
     --dropdown-bg-color: #2f3441;
     --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
@@ -67,4 +71,8 @@ html.dark {
     }
     //Search bar
     --search-bar-bg: #171c28;
+    //Review card
+    --review-card-bg: #171c28;
+    //Text content
+    --text-content-hr-bg: #5b5b5b;
 }
