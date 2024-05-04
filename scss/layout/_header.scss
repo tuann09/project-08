@@ -263,6 +263,7 @@
         justify-content: space-between;
         margin-bottom: 20px;
     }
+
     &__title {
         font-size: 2.2rem;
         font-weight: 500;
@@ -280,6 +281,11 @@
         border-width: 1.5px 0;
         border-color: var(--header-act-dropdown-border-color);
         border-style: solid;
+    }
+    &__separate {
+        margin: 20px 0;
+        height: 1px;
+        background: var(--header-act-dropdown-border-color);
     }
     &__label,
     &__value {
