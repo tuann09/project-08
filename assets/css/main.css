@@ -2258,6 +2258,7 @@ strong {
   height: 46px;
   padding: 0 20px;
   border-radius: 6px;
+  white-space: nowrap;
   font-size: 1.8rem;
   font-weight: 500;
   background: #f8f8fb;
@@ -2265,8 +2266,10 @@ strong {
 .btn + .btn:not(.btn--no-margin) {
   margin-left: 20px;
 }
+.btn--small {
+  height: 40px;
+}
 .btn--text {
-  color: #9e9da8;
   background: transparent;
   font-weight: 400;
 }
@@ -2927,6 +2930,61 @@ strong {
   margin: 40px 0;
 }
 
+.dialog__overlay, .dialog {
+  position: fixed;
+  inset: 0;
+}
+
+.dialog {
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity, visibility;
+  transition-duration: 0.2s;
+}
+.dialog.show {
+  opacity: 1;
+  visibility: visible;
+}
+.dialog__overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+.dialog__content {
+  position: relative;
+  z-index: 1;
+  max-width: min(450px, 100% - 40px);
+  background: var(--dialog-bg);
+  border-radius: 2rem;
+  padding: 30px;
+  box-shadow: 0px 20px 60px 10px var(--dialog-shadow);
+}
+.dialog__text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+.dialog__bottom {
+  gap: 30px;
+  margin-top: 30px;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 767.98px) {
+  .dialog {
+    padding: 20px;
+  }
+  .dialog__bottom {
+    gap: 20px;
+  }
+  .dialog__btn {
+    flex: 1;
+  }
+}
+
 html.dark {
   --text-color: #ffffff;
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7493%) hue-rotate(337deg)
@@ -2981,6 +3039,8 @@ html.dark {
   --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
   --checkout-border-color: #292e39;
   --checkout-gift-shadow: rgba(23, 28, 40, 0.2);
+  --dialog-bg: #2f3441;
+  --dialog-shadow: rgba(23, 28, 40, 0.4);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -3046,6 +3106,8 @@ html {
   --checkout-cart-info-shadow: rgba(237, 237, 246, 0.2);
   --checkout-border-color: #d2d1d6;
   --checkout-gift-shadow: rgba(237, 237, 246, 0.2);
+  --dialog-bg: #fff;
+  --dialog-shadow: rgba(237, 237, 246, 0.2);
 }
 @media (max-width: 991.98px) {
   html {
