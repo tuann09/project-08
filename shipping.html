@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -89,13 +89,13 @@
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!--Custom checkbox-->
-                                                    <label class="address-card__checkbox"
+                                                    <label class="cart-info__checkbox"
                                                         ><input
-                                                            type="checkbox"
-                                                            name=""
+                                                            type="radio"
+                                                            name="shipping-address"
                                                             id=""
                                                             checked
-                                                            class="address-card__checkbox-input"
+                                                            class="cart-info__checkbox-input"
                                                     /></label>
                                                 </div>
                                                 <div class="address-card____info">
@@ -111,7 +111,7 @@
                                             </div>
                                             <div class="address-card__right">
                                                 <div class="address-card__ctrl">
-                                                    <button class="address-card__ctrl-btn">
+                                                    <button class="cart-info__edit-btn">
                                                         <img
                                                             class="icon js-toggle"
                                                             toggle-target="#add-new-address"
@@ -127,12 +127,12 @@
                                             <div class="address-card__left">
                                                 <div class="address-card__choose">
                                                     <!--Custom checkbox-->
-                                                    <label class="address-card__checkbox"
+                                                    <label class="cart-info__checkbox"
                                                         ><input
-                                                            type="checkbox"
-                                                            name=""
+                                                            type="radio"
+                                                            name="shipping-address"
                                                             id=""
-                                                            class="address-card__checkbox-input"
+                                                            class="cart-info__checkbox-input"
                                                     /></label>
                                                 </div>
                                                 <div class="address-card____info">
@@ -149,7 +149,7 @@
                                             </div>
                                             <div class="address-card__right">
                                                 <div class="address-card__ctrl">
-                                                    <button class="address-card__ctrl-btn">
+                                                    <button class="cart-info__edit-btn">
                                                         <img class="icon" src="./assets/icons/edit.svg" alt="" />Edit
                                                     </button>
                                                 </div>
@@ -380,7 +380,7 @@
                                     <span>Estimated Total</span>
                                     <span>$201.65</span>
                                 </div>
-                                <a href="#!" class="cart-info__next-btn btn btn--primary btn--rounded"
+                                <a href="./payment.html" class="cart-info__next-btn btn btn--primary btn--rounded"
                                     >Continue to checkout</a
                                 >
                             </div>
@@ -413,15 +413,15 @@
         <div id="delete-confirm" class="modal modal--small hide">
             <!-- <button class="modal__close">&times;</button>-->
             <div class="modal__content">
-                <div class="modal__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+                <div class="modal__text">Do you want remove this item from shopping cart?</div>
                 <div class="modal__bottom">
-                    <button class="btn btn--small btn--text modal__btn js-toggle" toggle-target="#delete-confirm">
+                    <button class="btn btn--small btn--outline modal__btn js-toggle" toggle-target="#delete-confirm">
                         Cancel</button
                     ><button
-                        class="btn btn--small btn--primary modal__btn btn--no-margin js-toggle"
+                        class="btn btn--small btn--danger btn--primary modal__btn btn--no-margin js-toggle"
                         toggle-target="#delete-confirm"
                     >
-                        Confirm
+                        Delete
                     </button>
                 </div>
             </div>
@@ -496,12 +496,15 @@
                                     name=" "
                                     placeholder="City/District/Town"
                                     id="city"
+                                    readonly
                                     class="form__input js-toggle"
                                     toggle-target="#city-dialog"
                                 />
 
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
+                                <!--Select dialog-->
                                 <div id="city-dialog" class="form__select-dialog hide">
+                                    <h2 class="form__dialog-heading d-none d-sm-block">City/District/Town</h2>
                                     <button
                                         class="form__close--dialog d-none d-sm-block js-toggle"
                                         toggle-target="#city-dialog"

@@ -47,7 +47,7 @@ $error-color: #ed4337;
         display: flex;
         align-items: center;
         border-radius: 10px;
-        border: 1.5px solid #d2d1d6;
+        border: 1px solid #d2d1d6;
         padding: 0 12px;
         &:focus-within {
             border-color: rgb(63, 141, 230);
@@ -126,7 +126,7 @@ $error-color: #ed4337;
     }
     &__close--dialog {
         font-size: 3rem;
-        padding: 2px 18px;
+        padding: 12px 18px;
         position: absolute;
         right: 0;
         top: 0;
@@ -150,26 +150,32 @@ $error-color: #ed4337;
             margin-left: 10px;
         }
         @include abstracts.screen(lg) {
-            height: 42px;
+            &-icon {
+                width: 20px;
+            }
+            height: 48px;
         }
         @include abstracts.screen(sm) {
-            flex-direction: row-reverse;
-            margin-top: 20px;
-
-            &-icon {
-                margin-left: 0;
-                margin-right: 8px;
-            }
+            padding: 0 14px;
+            border: 1px solid #d2d1d6;
+            margin: 10px 30px 0;
+            border-radius: 10px;
         }
+    }
+    &__dialog-heading {
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 500;
+        padding: 20px;
     }
     &__option {
         padding: 8px 20px;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         &:hover {
             background: var(--form-option-hover-bg);
         }
         @include abstracts.screen(lg) {
-            padding: 14px 20px;
+            padding: 18px 30px;
         }
     }
     &__options-list {
@@ -177,6 +183,9 @@ $error-color: #ed4337;
         margin-top: 10px;
         overflow: auto;
         overscroll-behavior: contain;
+        @supports (-webkit-touch-callout: none) {
+            padding-bottom: 300px;
+        }
     }
     &__error {
         display: none;
@@ -220,7 +229,7 @@ $error-color: #ed4337;
             width: 19px;
             height: 19px;
             border-radius: 5px;
-            border: 1.5px solid #9e9da8;
+            border: 1px solid #9e9da8;
         }
     }
     &__checkbox:has(:checked) {

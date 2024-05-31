@@ -67,6 +67,10 @@
     &--rounded {
         border-radius: 99px;
     }
+    &--danger {
+        color: var(--button-danger-color, #fff);
+        background: rgb(185, 16, 16);
+    }
     &:hover {
         opacity: 0.9;
     }

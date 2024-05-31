@@ -22,10 +22,20 @@
     @include abstracts.screen(md) {
         padding: 16px;
     }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     &__heading {
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 141.667%;
+        &--lv2 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            line-height: 145.455%;
+        }
     }
     &__sub-heading {
         margin: 30px 0;
@@ -60,6 +70,29 @@
             font-weight: 700;
             line-height: 145.455%;
         }
+    }
+    &__checkbox {
+        position: relative;
+
+        &-input {
+            appearance: none;
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
+        }
+    }
+    &__edit-btn {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 144.444%;
     }
     &__separate {
         margin: 30px 0;
@@ -315,28 +348,57 @@
         height: 100%;
         display: flex;
         align-items: flex-end;
-        &-btn {
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 400;
-            line-height: 144.444%;
-        }
+    }
+}
+.payment-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #f6f6f6;
+    gap: 20px;
+    &__content {
+        flex: 1;
+    }
+    &--pointer {
+        cursor: pointer;
+    }
+    &__thumb {
+        width: 70px;
+        height: 54px;
+        object-fit: cover;
+    }
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+    &__desc,
+    &__detail {
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 146.667%;
+    }
+    &__desc {
+        margin-top: 4px;
+    }
+    &__detail {
+        color: rgb(64, 176, 64);
     }
     &__checkbox {
-        position: relative;
-
-        &-input {
-            appearance: none;
-            &::before {
-                content: url("../icons/checkbox-uncheck.svg");
-            }
-            &:not(:checked)::before {
-                filter: var(--icon-color);
-            }
-            &:checked::before {
-                content: url("../icons/checkbox-checked.svg");
-            }
-        }
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 14px;
+    }
+    &__checkbox-input:checked + &__cost {
+        color: inherit;
+    }
+    &__cost {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+        color: #9e9da8;
     }
 }
