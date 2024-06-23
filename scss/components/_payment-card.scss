@@ -1,0 +1,95 @@
+.payment-card {
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    background: var(--bg-color);
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    user-select: none;
+    z-index: 0;
+    &__img {
+        top: 0;
+        right: 0;
+        position: absolute;
+        pointer-events: none;
+        z-index: -1;
+    }
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    &__type {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+    &__number {
+        position: relative;
+
+        font-size: 1.8rem;
+        margin-top: 37px;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+    &__bottom {
+        display: flex;
+        margin-top: 20px;
+    }
+    &__label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 175%;
+    }
+    &__value {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 140%;
+    }
+    &__expired {
+        margin: 0 auto 0 40px;
+    }
+    &__circle {
+        --circle-width: 28px;
+        position: relative;
+        width: 42px;
+        height: var(--circle-width);
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: var(--circle-width);
+            height: var(--circle-width);
+            border-radius: 50%;
+        }
+        &::before {
+            z-index: 1;
+            background: #f94545;
+            left: 0;
+            mix-blend-mode: hard-light;
+        }
+        &::after {
+            background: #ffb700;
+            right: 0;
+        }
+    }
+}
+.new-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    min-height: 170px;
+    border-radius: 1rem;
+    border: 1px dashed #d2d1d6;
+    &__text {
+        font-size: 1.4rem;
+
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+}
