@@ -1595,6 +1595,19 @@ strong {
 .top-act__btn-wrap:hover .act-dropdown {
   display: block;
 }
+.top-act__user {
+  position: relative;
+}
+.top-act__user:hover .act-dropdown {
+  display: block;
+}
+.top-act__dropdown {
+  right: -15px !important;
+  width: min(300px, 100vw) !important;
+}
+.top-act__dropdown-arrow {
+  right: 15px !important;
+}
 
 .nav-btn {
   height: 50px;
@@ -1726,6 +1739,41 @@ strong {
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 146.667%;
+}
+
+.user-menu__top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-menu__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.user-menu__name {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.user-menu__list {
+  margin-top: 30px;
+}
+.user-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+}
+.user-menu__separate {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--separate-color);
+}
+.user-menu__icon {
+  width: 16px;
+  height: 16px;
 }
 
 .footer {
