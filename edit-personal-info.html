@@ -163,21 +163,21 @@
                                                     src="./assets/icons/arrow-left.svg"
                                                     alt=""
                                                     class="icon cart-info__back-arrow" /></a
-                                            >Add credit or debit card
+                                            >Personal info
                                         </h2>
                                         <form action="./profile.html" class="form form-card">
                                             <!--Form row 1-->
                                             <div class="form__row">
                                                 <div class="form__group">
-                                                    <label for="first-name" class="form__label form-card__label"
-                                                        >First Name</label
+                                                    <label for="full-name" class="form__label form-card__label"
+                                                        >Full name</label
                                                     >
                                                     <div class="form__text-input">
                                                         <input
                                                             type="text"
                                                             name=""
-                                                            id="first-name"
-                                                            placeholder="First Name"
+                                                            id="full-name"
+                                                            placeholder="Imran Khan"
                                                             class="form__input"
                                                             required
                                                             autofocus
@@ -189,18 +189,18 @@
                                                             class="form__input-icon-error"
                                                         />
                                                     </div>
-                                                    <p class="form__error">First Name chưa đúng định dạng</p>
+                                                    <p class="form__error">Full Name chưa đúng định dạng</p>
                                                 </div>
                                                 <div class="form__group">
-                                                    <label for="last-name" class="form__label form-card__label"
-                                                        >Last Name</label
+                                                    <label for="email-address" class="form__label form-card__label"
+                                                        >Email address</label
                                                     >
                                                     <div class="form__text-input">
                                                         <input
-                                                            type="text"
+                                                            type="email"
                                                             name=""
-                                                            id="last-name"
-                                                            placeholder="Last Name"
+                                                            id="email-address"
+                                                            placeholder="admin@uihut.com"
                                                             class="form__input"
                                                             required
                                                         />
@@ -211,88 +211,21 @@
                                                             class="form__input-icon-error"
                                                         />
                                                     </div>
-                                                    <p class="form__error">Last Name chưa đúng định dạng</p>
+                                                    <p class="form__error">Email chưa đúng định dạng</p>
                                                 </div>
                                             </div>
                                             <!--Form row 2-->
                                             <div class="form__row">
                                                 <div class="form__group">
-                                                    <label for="card-number" class="form__label form-card__label"
-                                                        >Card Information</label
-                                                    >
-                                                    <div class="form__text-input">
-                                                        <input
-                                                            type="text"
-                                                            name=""
-                                                            id="card-number"
-                                                            placeholder="Card Number"
-                                                            class="form__input"
-                                                            required
-                                                        />
-
-                                                        <img
-                                                            src="./assets/icons/form-error.svg"
-                                                            alt=""
-                                                            class="form__input-icon-error"
-                                                        />
-                                                    </div>
-                                                    <p class="form__error">Card Number chưa đúng định dạng</p>
-                                                </div>
-                                                <div class="form__group">
-                                                    <label for=" expiration-date" class="form__label form-card__label"
-                                                        >Expiration Date</label
-                                                    >
-                                                    <div class="form__text-input">
-                                                        <input
-                                                            type="text"
-                                                            name=""
-                                                            id="expiration-date"
-                                                            placeholder="MM/YY"
-                                                            class="form__input"
-                                                            required
-                                                        />
-
-                                                        <img
-                                                            src="./assets/icons/form-error.svg"
-                                                            alt=""
-                                                            class="form__input-icon-error"
-                                                        />
-                                                    </div>
-                                                    <p class="form__error">Expiration Date chưa đúng định dạng</p>
-                                                </div>
-                                            </div>
-                                            <!--Form row 3-->
-                                            <div class="form__row">
-                                                <div class="form__group">
-                                                    <label for="cvv" class="form__label form-card__label">CVV</label>
-                                                    <div class="form__text-input">
-                                                        <input
-                                                            type="text"
-                                                            name=""
-                                                            id="cvv"
-                                                            placeholder="123"
-                                                            class="form__input"
-                                                            required
-                                                        />
-
-                                                        <img
-                                                            src="./assets/icons/form-error.svg"
-                                                            alt=""
-                                                            class="form__input-icon-error"
-                                                        />
-                                                    </div>
-                                                    <p class="form__error">CVV chưa đúng định dạng</p>
-                                                </div>
-                                                <div class="form__group">
                                                     <label for="phone-number" class="form__label form-card__label"
-                                                        >Phone Number</label
+                                                        >Phone number</label
                                                     >
                                                     <div class="form__text-input">
                                                         <input
-                                                            type="text"
+                                                            type="number"
                                                             name=""
                                                             id="phone-number"
-                                                            placeholder="Phone Number"
+                                                            placeholder="+008 01234 56789"
                                                             class="form__input"
                                                             required
                                                         />
@@ -305,22 +238,30 @@
                                                     </div>
                                                     <p class="form__error">Phone Number chưa đúng định dạng</p>
                                                 </div>
+                                                <div class="form__group">
+                                                    <label for=" password" class="form__label form-card__label"
+                                                        >Password</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="password"
+                                                            name=""
+                                                            id="password"
+                                                            placeholder=""
+                                                            class="form__input"
+                                                            required
+                                                        />
+
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-icon-error"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Password chưa đúng định dạng</p>
+                                                </div>
                                             </div>
-                                            <div class="form__group">
-                                                <label for="set-default-card" class="form__label form-card__label"
-                                                    >Card Preferences</label
-                                                >
-                                                <label class="form__checkbox">
-                                                    <input
-                                                        type="checkbox"
-                                                        name=""
-                                                        id="set-default-card"
-                                                        checked
-                                                        class="form__checkbox-input d-none"
-                                                    />
-                                                    <span class="form__checkbox-label">Set as default card</span>
-                                                </label>
-                                            </div>
+
                                             <div class="form-card__bottom">
                                                 <a href="./profile.html" class="btn btn--text">Cancel</a>
                                                 <button class="btn btn--primary btn--rounded">Save Card</button>
